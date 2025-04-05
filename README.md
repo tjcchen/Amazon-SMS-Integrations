@@ -12,7 +12,6 @@ An integration manual for Amazon SMS Integrations
   - Uses Amazon Pinpoint for large-scale SMS messaging with analytics
 
 
-
 ## License
 
 This project is licensed under the terms of the MIT License.
