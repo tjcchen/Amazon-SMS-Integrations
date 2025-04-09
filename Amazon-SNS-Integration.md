@@ -160,7 +160,7 @@ for number in phone_numbers:
 
 1. **Authentication Failures**:
    - Double-check your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
-   - Ensure the IAM user has the correct SNS permissions
+   - Ensure the IAM user has the correct SNS permissions, like: `AmazonSNSFullAccess`
 
 2. **SMS Not Delivered**:
    - In sandbox mode, verify the recipient's phone number is confirmed
@@ -175,13 +175,6 @@ for number in phone_numbers:
    - Some features and pricing vary by region
    - Ensure you're using a region that supports SMS messaging
 
-### Monitoring and Logging
-
-In a production environment, consider:
-
-- Setting up CloudWatch alarms for SMS delivery failures
-- Using AWS X-Ray for tracing requests
-- Implementing detailed logging for troubleshooting
 
 ---
 
