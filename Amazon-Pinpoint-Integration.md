@@ -284,7 +284,22 @@ def get_campaign_analytics(project_id, campaign_id):
 
 1. **Authentication Failures**:
    - Verify your AWS credentials are correct
-   - Check if your IAM user has the `AmazonPinpointFullAccess` policy attached
+   - Check if your IAM user has the `AmazonPinpointFullAccess` policy attached, this should be a custom inline policy, for example:
+    
+   ```json
+   {
+	    "Version": "2012-10-17",
+	    "Statement": [
+			{
+				"Effect": "Allow",
+				"Action": [
+					"mobiletargeting:SendMessages"
+				],
+				"Resource": "*"
+			}
+		]
+   }
+   ```
 
 2. **Project ID Issues**:
    - Ensure you're using the correct Pinpoint project ID
@@ -299,15 +314,6 @@ def get_campaign_analytics(project_id, campaign_id):
    - Verify your segment contains valid endpoints
    - Check that your message content meets the requirements
    - Review campaign execution metrics in the Pinpoint console
-
-### Monitoring and Logging
-
-For production environments:
-
-- Use CloudWatch metrics to monitor SMS delivery rates
-- Set up alarms for abnormal sending patterns or errors
-- Implement detailed logging for troubleshooting
-- Track campaign analytics to optimize future messaging
 
 ---
 
